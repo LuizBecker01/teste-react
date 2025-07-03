@@ -1,44 +1,49 @@
+import { FaCat } from "react-icons/fa";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <div className="bg-pink-300 w-full h-screen flex flex-col">
+      <header className="text-center text-3xl font-bold text-purple-800 bg-white flex items-center justify-center gap-2 h-[70px]">
+        <FaCat />
+        <h4 className="text-2xl">DudaSys</h4>
+        <FaCat />
+      </header>
 
-      <button class="rounded-4xl lg:bg-orange-600 md:bg-red-500 bg-green-500 text-white font-bold py-5 px-3">
-        Me clique-me
-      </button>
+      <div className="flex flex-1 items-center justify-center">
+        <form
+          action="https://getform.io/f/bllzxdmb"
+          method="POST"
+          className="bg-white flex flex-col gap-2 w-[300px] p-8 rounded-lg shadow-lg"
+        >
+          <h2 className=" font-bold text-black text-center mb-4">
+            Entrar na sua conta
+          </h2>
 
-      <form action="https://getform.io/f/bllzxdmb" method="POST" class=" bg-yellow-500 flex flex-col gap-2">
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="text" name="message" />
-        <input
-          type="hidden"
-          name="_gotcha"
-          style={{ display: "none !important" }}
-        />
-        <input
-          type="checkbox"
-          name="subscribe"
-          defaultValue="yes"
-          defaultChecked=""
-        />
-        <input type="hidden" name="subscribe" defaultValue="no" />
-        <input
-          type="radio"
-          name="gender"
-          defaultValue="male"
-          defaultChecked=""
-        />
-        <input type="radio" name="gender" defaultValue="female" />
-        <input type="radio" name="gender" defaultValue="other" />
-        <select name="work-experience">
-          <option value="one-year">0-1 years</option>
-          <option value="one-five-years">1-5 years</option>
-        </select>
-        <button type="submit">Send</button>
-      </form>
+          <input
+            type="email"
+            name="email"
+            className="text-black border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-300"
+            placeholder="Digite seu email"
+          />
+
+          <input
+            type="password"
+            name="senha"
+            className="text-black border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-300"
+            placeholder="Digite sua senha"
+          />
+
+          <input type="hidden" name="_gotcha" className="hidden" />
+
+          <button
+            type="submit"
+            className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded cursor-pointer"
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
